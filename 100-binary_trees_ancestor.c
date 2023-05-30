@@ -35,7 +35,8 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				     const binary_tree_t *second)
 {
 	size_t d1, d2, i;
-	const binary_tree_t **anc_first, **anc_second, *match;
+	const binary_tree_t **anc_first, **anc_second;
+	binary_tree_t *match;
 	int found = 0;
 
 	if (first == NULL || second == NULL)
