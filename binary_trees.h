@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -22,6 +23,9 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
+typedef struct binary_tree_s bst_t;
+typedef struct binary_tree_s avl_t;
+typedef struct binary_tree_s heap_t;
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -53,5 +57,15 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 void binary_tree_levelorder_level(const binary_tree_t *tree,
 				  void (*func)(int), size_t level);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+int binary_tree_is_complete_rec(const binary_tree_t *tree, size_t index,
+				size_t count);
+int binary_tree_is_complete(const binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int max_value(const binary_tree_t *tree);
+int min_value(const binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+bst_t *bst_insert_rec(bst_t *tree, int value);
+bst_t *bst_insert(bst_t **tree, int value);
 
 #endif
