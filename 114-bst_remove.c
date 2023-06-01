@@ -59,7 +59,7 @@ bst_t *bst_remove(bst_t *root, int value)
 		{
 			temp = find_min(root->right);
 			root->n = temp->n;
-			root->right = bst_remove(root->right, value);
+			root->right = bst_remove(root->right, temp->n);
 		}
 	}
 	return (root);
