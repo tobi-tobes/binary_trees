@@ -78,5 +78,6 @@ int binary_tree_is_avl(const binary_tree_t *tree);
 avl_t *check_balance(avl_t *node);
 avl_t *fix_imbalance(avl_t *imbalanced);
 avl_t *avl_insert(avl_t **tree, int value);
+avl_t *array_to_avl(int *array, size_t size);
 
 #endif

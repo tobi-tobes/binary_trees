@@ -10,7 +10,7 @@
 avl_t *array_to_avl(int *array, size_t size)
 {
 	size_t i;
-	bst_t *root = NULL;
+	avl_t *root = NULL;
 
 	if (array == NULL || size <= 0)
 		return (NULL);
