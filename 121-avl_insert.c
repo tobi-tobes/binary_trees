@@ -109,10 +109,13 @@ avl_t *fix_imbalance(avl_t *imbalanced)
 		imbalanced = binary_tree_rotate_left(imbalanced);
 	}
 	imbalanced->parent = parent;
-	if (parent->left->n == previous)
-		parent->left = imbalanced;
-	else
-		parent->right = imbalanced;
+	if (parent != NULL)
+	{
+		if (parent->left->n == previous)
+			parent->left = imbalanced;
+		else
+			parent->right = imbalanced;
+	}
 	root = imbalanced;
 	while (root->parent != NULL)
 		root = root->parent;
