@@ -27,7 +27,6 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -63,8 +62,6 @@ int binary_tree_is_complete_rec(const binary_tree_t *tree, size_t index,
 int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
-int max_value(const binary_tree_t *tree);
-int min_value(const binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 int binary_tree_is_bst_rec(const binary_tree_t *tree, int min, int max);
 bst_t *bst_insert_rec(bst_t *tree, int value);
@@ -80,5 +77,7 @@ avl_t *check_balance(avl_t *node);
 avl_t *fix_imbalance(avl_t *imbalanced);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
+int binary_tree_is_heap(const binary_tree_t *tree);
+int binary_tree_is_heap_rec(const binary_tree_t *tree);
 
 #endif
