@@ -109,6 +109,7 @@ bst_t *bst_remove(bst_t *root, int value)
 			root = duplicate(root, temp);
 			root->right = bst_remove(root->right, temp->n);
 		}
+		return (root);
 	}
 	return (root);
 }
