@@ -3,6 +3,8 @@
 /**
  * binary_tree_is_bst_rec - checks if a binary tree is a valid BST
  * @tree: pointer to the root node of the tree to check
+ * @min: minimum number to compare node to
+ * @max: maximum number to compare node to
  *
  * Return: 1 if tree is a valid BST or 0
  */
