@@ -51,16 +51,23 @@ bst_t *duplicate(bst_t *root, bst_t *min)
 {
 	bst_t *temp;
 
-	temp = binary_tree_node(NULL, min->n);
-	temp->parent = root->parent;
+	temp = binary_tree_node(root->parent, min->n);
 	temp->left = root->left;
 	temp->right = root->right;
 
-	if (root->left != NULL)
-		root->left->parent = temp;
+	if (temp->left != NULL)
+		temp->left->parent = temp;
 
-	if (root->right != NULL)
-		root->right->parent = temp;
+	if (temp->right != NULL)
+		temp->right->parent = temp;
+
+	if (root->parent != NULL)
+	{
+		if (root->parent->left == root)
+			root->parent->left = temp;
+		else
+			root->parent->right = temp;
+	}
 
 	free(root);
 	return (temp);
@@ -109,7 +116,6 @@ bst_t *bst_remove(bst_t *root, int value)
 			root = duplicate(root, temp);
 			root->right = bst_remove(root->right, temp->n);
 		}
-		return (root);
 	}
 	return (root);
 }
