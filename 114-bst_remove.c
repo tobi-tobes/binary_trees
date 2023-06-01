@@ -11,7 +11,7 @@ bst_t *find_min(bst_t *root)
 	bst_t *temp;
 
 	temp = root;
-	while (temp != NULL && temp->left != NULL)
+	while (temp->left != NULL)
 	{
 		temp = temp->left;
 	}
